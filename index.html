@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>東北冬日溫泉自駕遊 6日5夜 | Tohoku 6D5N Winter Onsen Road Trip</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f6f3ec;
+      --card: #ffffff;
+      --ink: #231f1e;
+      --muted: #5c534e;
+      --accent: #a62c37;        /* Winter Camellia Crimson 椿紅 */
+      --wood: #4e3b31;          /* Dark Cedar / Hinoki 檜木深褐 */
+      --gold: #b88a3e;          /* Warm Brass / Kintsugi 金繼 */
+      --snow-banner: #fbf9f4;   /* Washi Snow Cream 和紙雪白 */
+      --soft: #faf6ee;
+      --border: #e3dacb;
+      --badge-bg: #f3ece1;
+      --badge-ink: #5c3a21;
+      --font-serif: "Noto Serif TC", "Songti TC", "STSong", "PMingLiU", Georgia, serif;
+      --font-sans: "Noto Sans TC", "PingFang HK", "PingFang TC", "Hiragino Sans", "Microsoft JhengHei", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      line-height: 1.55;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding-bottom: 36px;
+    }
+
+    /* Japanese Winter Washi & Cedar Hero Header */
+    .hero {
+      position: relative;
+      background:
+        radial-gradient(circle at 88% 18%, rgba(166, 44, 55, 0.08) 0%, transparent 42%),
+        radial-gradient(circle at 12% 85%, rgba(184, 138, 62, 0.10) 0%, transparent 45%),
+        linear-gradient(180deg, #fcfaf5 0%, #f3ece0 100%);
+      color: var(--ink);
+      padding: 28px 20px 26px;
+      border-top: 5px solid var(--accent);
+      border-bottom: 2px solid var(--border);
+    }
+
+    .hero::after {
+      content: "❄  雪見溫泉・古民家紀行  ❄";
+      display: block;
+      margin-top: 12px;
+      font-family: var(--font-serif);
+      font-size: 11.5px;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      opacity: 0.85;
+    }
+
+    .hero h1 {
+      margin: 0 0 8px;
+      font-family: var(--font-serif);
+      font-size: 26px;
+      line-height: 1.3;
+      font-weight: 900;
+      color: #1f1916;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-sub {
+      margin: 0;
+      font-family: var(--font-serif);
+      font-size: 14.5px;
+      color: var(--wood);
+      letter-spacing: 0.02em;
+    }
+
+    .section {
+      padding: 14px 14px 0;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      font-weight: 700;
+      margin: 8px 2px 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--ink);
+      letter-spacing: 0.02em;
+    }
+
+    .section-title::before {
+      content: "";
+      width: 4px;
+      height: 18px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(46, 36, 28, 0.05);
+      margin-bottom: 14px;
+    }
+
+    .card-body {
+      padding: 15px;
+    }
+
+    /* Overview Grid */
+    .overview-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 9px;
+    }
+
+    .overview-item {
+      background: var(--soft);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+    }
+
+    .overview-label {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      margin-bottom: 3px;
+    }
+
+    .overview-value {
+      font-size: 13.5px;
+      font-weight: 500;
+    }
+
+    /* Japanese Winter Washi Day Banner */
+    .day-banner {
+      background: linear-gradient(135deg, #fbf9f4 0%, #f1e9dc 100%);
+      color: var(--ink);
+      padding: 13px 15px;
+      border-left: 5px solid var(--accent);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .day-meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--wood);
+      margin-bottom: 5px;
+    }
+
+    .day-num {
+      background: var(--accent);
+      color: #ffffff;
+      padding: 2px 9px;
+      border-radius: 4px;
+      font-family: var(--font-sans);
+      font-size: 11.5px;
+      letter-spacing: 0.06em;
+    }
+
+    .day-route {
+      font-family: var(--font-serif);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.4;
+      color: #1f1916;
+      letter-spacing: 0.01em;
+    }
+
+    /* Full-Width Widescreen Photo Frame */
+    .photo-showcase {
+      background: #1d1917;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .photo-showcase img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+    }
+
+    .caption-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      background: var(--soft);
+      padding: 8px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .caption-tag {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      color: var(--wood);
+      font-size: 11.5px;
+      font-weight: 500;
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+
+    /* Timeline */
+    .timeline {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .timeline li {
+      position: relative;
+      padding: 7px 0 7px 14px;
+      border-left: 2px solid #e2d7c5;
+      margin-left: 4px;
+      font-size: 14px;
+    }
+
+    .timeline li:last-child {
+      border-left-color: transparent;
+    }
+
+    .timeline li::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 14px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .time-badge {
+      display: inline-block;
+      background: var(--badge-bg);
+      color: var(--badge-ink);
+      font-weight: 700;
+      font-size: 12px;
+      padding: 1px 7px;
+      border-radius: 5px;
+      margin-right: 6px;
+    }
+
+    /* Stay & Meal Grid */
+    .stay-box {
+      margin-top: 12px;
+      background: #fdf8ef;
+      border: 1px solid #e6d2ad;
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 13.5px;
+    }
+
+    .stay-title {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      color: #7c4d00;
+      margin-bottom: 2px;
+    }
+
+    .meal-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 12.5px;
+    }
+
+    .meal-table th,
+    .meal-table td {
+      border: 1px solid var(--border);
+      padding: 7px 6px;
+      text-align: center;
+      vertical-align: top;
+    }
+
+    .meal-table th {
+      background: #f5efe4;
+      color: var(--wood);
+      font-weight: 700;
+      width: 33.33%;
+    }
+
+    .notes-list {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 14px;
+    }
+
+    .notes-list li {
+      margin-bottom: 8px;
+    }
+
+    .notes-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (min-width: 560px) {
+      .overview-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .overview-item.full-span {
+        grid-column: 1 / -1;
+      }
+      .hero h1 {
+        font-size: 29px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="hero">
+      <h1>東北冬日溫泉自駕遊 6日5夜</h1>
+      <p class="hero-sub">2027年3月14日（日）– 3月19日（五）｜古民家・秘湯・溪谷・炭烤海鮮</p>
+    </header>
+
+    <div class="section">
+      <div class="card">
+        <div class="card-body">
+          <div class="overview-grid">
+            <div class="overview-item">
+              <div class="overview-label">出發日期 Dates</div>
+              <div class="overview-value">2027年3月14日（日）– 3月19日（五）</div>
+            </div>
+            <div class="overview-item">
+              <div class="overview-label">自駕配置 Vehicle</div>
+              <div class="overview-value">單程 4WD 休旅車（配雪胎 Studless Tires + ETC 卡）</div>
+            </div>
+            <div class="overview-item full-span">
+              <div class="overview-label">路線起訖 Route</div>
+              <div class="overview-value">仙台空港（Sendai Airport）取車 → 會津／西会津 → 高湯温泉 → 山寺・銀山温泉 → 平泉／一関 → 角館・鶴の湯温泉 → 奥入瀬渓流・八食センター・青森屋 → 新青森駅（Shin-Aomori Station）還車 → 新幹線返回仙台空港</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">每日行程日誌 Daily Itinerary</div>
+
+      <!-- DAY 01 -->
+      <article class="card">
+        <div class="day-banner">
+          <div class="day-meta"><span class="day-num">DAY 01</span><span>2027年3月14日（日）</span></div>
+          <div class="day-route">仙台空港（Sendai Airport） → 會津若松（Aizuwakamatsu） → 暮らしの体験宿 ひととき（Kominka Stay Hitotoki）</div>
+        </div>
+        <div class="photo-showcase">
+          <img src="day1.jpg" alt="豬苗代湖冬景與西会津古民家" />
+        </div>
+        <div class="caption-strip">
+          <span class="caption-tag">豬苗代湖冬景（猪苗代湖）</span>
+          <span class="caption-tag">西会津古民家・書坊（ひととき）</span>
+        </div>
+        <div class="card-body">
+          <ul class="timeline">
+            <li><span class="time-badge">14:05</span>抵達仙台空港（Sendai Airport）（UO890，09:00 香港 → 14:05 仙台），辦理入境與提取 4WD 休旅車（預留約 2 小時緩衝）。</li>
+            <li><span class="time-badge">16:05</span>經磐越自動車道（Ban-etsu Expressway）途經豬苗代湖（Lake Inawashiro / 猪苗代湖）前往會津若松（Aizuwakamatsu / 会津若松）（約 1 小時 55 分）。</li>
+            <li><span class="time-badge">18:00</span>於會津若松（会津若松）超市或酒鋪採買福島清酒、刺身及晚餐食材（如未事先預約民宿家庭料理）。</li>
+            <li><span class="time-badge">18:30</span>西行前往西会津（Nishiaizu / 西会津）（約 35 分），於 20:00 前完成入住。</li>
+            <li><span class="time-badge">晚間</span>於古民家餐桌享用晚餐，並在書坊 lounges 小酌放鬆。</li>
+          </ul>
+          <div class="stay-box">
+            <div class="stay-title">下榻住宿</div>
+            暮らしの体験宿 ひととき（Kominka Stay Hitotoki）（整棟包棟、2間樓上臥室、2個洗手間、免費泊車）
+          </div>
+          <table class="meal-table">
+            <thead>
+              <tr><th>早餐 Breakfast</th><th>午餐 Lunch</th><th>晚餐 Dinner</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>機上 / 自行安排</td><td>機上 / 機場輕食</td><td>古民家晚餐 / 會津地酒與小食</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <!-- DAY 02 -->
+      <article class="card">
+        <div class="day-banner">
+          <div class="day-meta"><span class="day-num">DAY 02</span><span>2027年3月15日（一）</span></div>
+          <div class="day-route">暮らしの体験宿 ひととき → 大内宿（Ouchi-juku） → 高湯温泉（Takayu Onsen）</div>
+        </div>
+        <div class="photo-showcase">
+          <img src="day2.jpg" alt="大内宿茅葺屋街景" />
+        </div>
+        <div class="caption-strip">
+          <span class="caption-tag">大内宿茅葺屋街景（大内宿）</span>
+          <span class="caption-tag">高湯温泉乳白色硫磺泉（高湯温泉）</span>
+        </div>
+        <div class="card-body">
+          <ul class="timeline">
+            <li><span class="time-badge">07:00–09:00</span>體驗晨間芬蘭木柴桑拿（薪サウナ，需提前與屋主預約生火），10:00 前辦理退房。</li>
+            <li><span class="time-badge">10:00</span>前往大内宿（Ouchi-juku / 大内宿）（約 1 小時 05 分），漫步江戶時代茅草屋宿場町並享用大蔥蕎麥麵（ねぎそば）午餐。</li>
+            <li><span class="time-badge">13:00</span>可順道走訪鶴ヶ城（Tsuruga Castle / 鶴ヶ城）（約 40 分），隨後沿豬苗代湖（Lake Inawashiro / 猪苗代湖）及五色沼（Goshikinuma Ponds / 五色沼）前往高湯温泉（Takayu Onsen / 高湯温泉）（約 1 小時 25 分）。</li>
+            <li><span class="time-badge">16:00</span>辦理入住，浸泡 100% 純天然乳白色硫磺露天溫泉，並享用會席料理晚餐。</li>
+          </ul>
+          <div class="stay-box">
+            <div class="stay-title">下榻住宿</div>
+            高湯温泉（Takayu Onsen）— 玉子湯（Tamagoyu）或 安達屋（Adachiya）
+          </div>
+          <table class="meal-table">
+            <thead>
+              <tr><th>早餐 Breakfast</th><th>午餐 Lunch</th><th>晚餐 Dinner</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>民宿 / 自行安排</td><td>大内宿大蔥蕎麥麵 / 會津料理</td><td>溫泉旅館會席料理</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <!-- DAY 03 -->
+      <article class="card">
+        <div class="day-banner">
+          <div class="day-meta"><span class="day-num">DAY 03</span><span>2027年3月16日（二）</span></div>
+          <div class="day-route">高湯温泉 → 山寺・宝珠山立石寺（Yamadera） → 銀山温泉（Ginzan Onsen） → 天空のお宿 雅館（Miyabi-kan）</div>
+        </div>
+        <div class="photo-showcase">
+          <img src="day3.jpg" alt="山寺石階與銀山温泉木造街景" />
+        </div>
+        <div class="caption-strip">
+          <span class="caption-tag">山寺・立石寺（山寺）</span>
+          <span class="caption-tag">銀山温泉木造街景（銀山温泉）</span>
+          <span class="caption-tag">雅館圍爐裏・河谷別墅（雅館）</span>
+        </div>
+        <div class="card-body">
+          <ul class="timeline">
+            <li><span class="time-badge">09:00</span>前往山寺・宝珠山立石寺（Yamadera / Risshaku-ji Temple）（約 1 小時），拾級登覽山寺石階。</li>
+            <li><span class="time-badge">11:30</span>於山寺山下享用蕎麥麵午餐。</li>
+            <li><span class="time-badge">12:30</span>前往銀山温泉（Ginzan Onsen / 銀山温泉）（約 1 小時）。將車輛停放於大正ろまん館（Taisho Roman-kan），搭乘接駁巴士（來回約 ¥500）進入木造溫泉街散步約 1.5 小時及體驗日間湯。</li>
+            <li><span class="time-badge">15:15</span>向東北行駛前往一関／平泉（Ichinoseki / Hiraizumi / 一関・平泉）（約 1 小時 50 分），沿途可順便採買晚餐食材或外帶。</li>
+            <li><span class="time-badge">17:15</span>入住擁有 200 年古民家樑柱的河谷景觀別墅，圍坐於圍爐裏（Irori / 囲炉裏）旁悠閒用餐。</li>
+          </ul>
+          <div class="stay-box">
+            <div class="stay-title">下榻住宿</div>
+            天空のお宿 雅館（Tenku no Oyado Miyabi-kan）（每日一組包棟、和洋床鋪、免費泊車）
+          </div>
+          <table class="meal-table">
+            <thead>
+              <tr><th>早餐 Breakfast</th><th>午餐 Lunch</th><th>晚餐 Dinner</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>溫泉旅館早餐</td><td>山寺山下蕎麥麵 / 銀山輕食</td><td>別墅自煮 / 當地外帶料理</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <!-- DAY 04 -->
+      <article class="card">
+        <div class="day-banner">
+          <div class="day-meta"><span class="day-num">DAY 04</span><span>2027年3月17日（三）</span></div>
+          <div class="day-route">天空のお宿 雅館 → 角館武家屋敷通り（Kakunodate） → 鶴の湯温泉（Tsurunoyu Onsen）</div>
+        </div>
+        <div class="photo-showcase">
+          <img src="day4.jpg" alt="角館武家屋敷、田沢湖與鶴の湯温泉" />
+        </div>
+        <div class="caption-strip">
+          <span class="caption-tag">角館武家屋敷（角館）</span>
+          <span class="caption-tag">田沢湖（田沢湖）</span>
+          <span class="caption-tag">鶴の湯温泉露天風呂（鶴の湯）</span>
+        </div>
+        <div class="card-body">
+          <ul class="timeline">
+            <li><span class="time-badge">08:30</span>可選擇晨間順遊平泉（Hiraizumi / 平泉）中尊寺（Chuson-ji Temple / 中尊寺）（距離雅館約 20–25 分鐘車程），再北上前往秋田。</li>
+            <li><span class="time-badge">09:45</span>前往角館武家屋敷通り（Kakunodate Samurai District / 角館武家屋敷通り）（約 1 小時 30 分）散步及午餐。</li>
+            <li><span class="time-badge">13:00</span>途經田沢湖（Lake Tazawa / 田沢湖）前往乳頭温泉郷（Nyuto Onsenkyo / 乳頭温泉郷）（約 50 分）。</li>
+            <li><span class="time-badge">14:00</span>直接辦理入住鶴の湯温泉（Tsurunoyu Onsen / 鶴の湯温泉），從容享受館內乳白色露天溫泉（不另購湯めぐり帖，避免因約 15:00 日歸結束時間而趕路）。</li>
+            <li><span class="time-badge">18:00</span>品嚐山芋鍋（Yamanoimo Nabe）及炭火烤岩魚等傳統晚餐，隨後晚間泡湯。</li>
+          </ul>
+          <div class="stay-box">
+            <div class="stay-title">下榻住宿</div>
+            鶴の湯温泉（Tsurunoyu Onsen）（備選：鶴の湯別館 山の宿 Tsurunoyu Bekkan Yama-no-Yado 或 孫六温泉 六庵 Magoroku Onsen Rokuan）
+          </div>
+          <table class="meal-table">
+            <thead>
+              <tr><th>早餐 Breakfast</th><th>午餐 Lunch</th><th>晚餐 Dinner</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>別墅自理 / 輕食</td><td>角館當地餐廳</td><td>鶴の湯鄉土晚餐（山芋鍋・岩魚）</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <!-- DAY 05 -->
+      <article class="card">
+        <div class="day-banner">
+          <div class="day-meta"><span class="day-num">DAY 05</span><span>2027年3月18日（四）</span></div>
+          <div class="day-route">鶴の湯温泉 → 奥入瀬渓流（Oirase Gorge） → 八食センター（Hasshoku Center） → 三沢（Misawa）</div>
+        </div>
+        <div class="photo-showcase">
+          <img src="day5.jpg" alt="奥入瀬渓流、八食センター炭烤海鮮與青森屋浮湯" />
+        </div>
+        <div class="caption-strip">
+          <span class="caption-tag">奥入瀬渓流冬瀑（奥入瀬）</span>
+          <span class="caption-tag">七厘村炭烤海鮮（八食センター）</span>
+          <span class="caption-tag">青森屋浮湯・祭典（青森屋）</span>
+        </div>
+        <div class="card-body">
+          <ul class="timeline">
+            <li><span class="time-badge">09:00</span>途經十和田湖（Lake Towada / 十和田湖）並駛經奥入瀬渓流（Oirase Gorge / 奥入瀬渓流）（約 1 小時 50 分），欣賞冬日溪流與冰瀑景致。</li>
+            <li><span class="time-badge">12:00</span>往東前往八戸（Hachinohe / 八戸）八食センター（Hasshoku Center / 八食センター）（約 1 小時 10 分）。</li>
+            <li><span class="time-badge">13:15</span>於八食センター（Hasshoku Center）內的七厘村（Shichirin-mura / 七厘村）享用炭烤海鮮午餐——在市場攤檔挑選新鮮扇貝、生蠔、魷魚及螃蟹，即席以炭爐燒烤。</li>
+            <li><span class="time-badge">15:00</span>向北短程驅車前往三沢（Misawa / 三沢）（約 30 分）。</li>
+            <li><span class="time-badge">15:30</span>入住星野リゾート 青森屋（Hoshino Resorts Aomoriya），體驗睡魔燈籠露天風呂「浮湯」及晚間祭典舞台表演「みちのく祭りや」。</li>
+          </ul>
+          <div class="stay-box">
+            <div class="stay-title">下榻住宿</div>
+            星野リゾート 青森屋（Hoshino Resorts Aomoriya）
+          </div>
+          <table class="meal-table">
+            <thead>
+              <tr><th>早餐 Breakfast</th><th>午餐 Lunch</th><th>晚餐 Dinner</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>鶴の湯早餐</td><td>八食センター七厘村炭烤海鮮</td><td>青森屋自助餐 / 會席料理</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <!-- DAY 06 -->
+      <article class="card">
+        <div class="day-banner">
+          <div class="day-meta"><span class="day-num">DAY 06</span><span>2027年3月19日（五）</span></div>
+          <div class="day-route">三沢（Misawa） → 新青森駅（Shin-Aomori Station） → 仙台空港（Sendai Airport） → 香港（Hong Kong）</div>
+        </div>
+        <div class="photo-showcase">
+          <img src="day6.jpg" alt="東北新幹線はやぶさ" />
+        </div>
+        <div class="caption-strip">
+          <span class="caption-tag">東北新幹線はやぶさ</span>
+          <span class="caption-tag">仙台空港アクセス線</span>
+        </div>
+        <div class="card-body">
+          <ul class="timeline">
+            <li><span class="time-badge">08:30</span>由三沢（Misawa / 三沢）驅車前往新青森駅（Shin-Aomori Station / 新青森駅）（約 1 小時 15 分）。</li>
+            <li><span class="time-badge">10:00</span>於新青森駅（Shin-Aomori Station）辦理還車手續。</li>
+            <li><span class="time-badge">10:35</span>搭乘東北新幹線はやぶさ（Hayabusa Shinkansen）直達仙台駅（Sendai Station / 仙台駅）（10:35 → 12:10，約 1 小時 35 分）。</li>
+            <li><span class="time-badge">12:25</span>轉乘仙台空港アクセス線（Sendai Airport Access Line）前往仙台空港（Sendai Airport）（12:25 → 12:50，約 25 分）。</li>
+            <li><span class="time-badge">12:50</span>抵達仙台空港（Sendai Airport），預留完整 2 小時辦理登機及離境返回香港。</li>
+          </ul>
+          <div class="stay-box">
+            <div class="stay-title">回程交通銜接</div>
+            10:00 新青森駅還車 → 10:35 新幹線はやぶさ（12:10 抵仙台駅）→ 12:25 仙台空港アクセス線（12:50 抵仙台空港）
+          </div>
+          <table class="meal-table">
+            <thead>
+              <tr><th>早餐 Breakfast</th><th>午餐 Lunch</th><th>晚餐 Dinner</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>青森屋早餐</td><td>駅弁 / 仙台空港內餐廳</td><td>機上 / 抵港後安排</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <div class="section-title">出發前及自駕重點提示 Notes</div>
+      <div class="card">
+        <div class="card-body">
+          <ul class="notes-list">
+            <li><strong>車程上限：</strong>全程每一段行車時間均控制在 ≤ 2 小時。</li>
+            <li><strong>ひととき桑拿與入住：</strong>Day 1 出發前向屋主確認約 19:00 抵達（20:00 入住截止前），並提前預約 Day 2 清晨（07:00–09:00）木柴桑拿生火。</li>
+            <li><strong>銀山温泉（Ginzan Onsen）交通：</strong>旺季預約接駁時段限制暫定至 2027年3月7日止（建議於 2027年2月再次核對是否因積雪延長）；請於大正ろまん館（Taisho Roman-kan）停車並乘接駁車進出，切勿徒步走未除雪路段。</li>
+            <li><strong>八食センター（Hasshoku Center）營業時間：</strong>逢星期三休息；安排於 3月18日（四）午餐時段前往完全正常營業（七厘村 Shichirin-mura 營業至 17:00）。</li>
+            <li><strong>雪季裝備：</strong>租車時務必確認 4WD 及雪胎（スタッドレスタイヤ），3月中旬西会津、高湯、乳頭及奥入瀬周邊山路仍可能有積雪。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
