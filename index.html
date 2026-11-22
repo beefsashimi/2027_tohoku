@@ -43,6 +43,32 @@
       padding-bottom: 36px;
     }
 
+    /* Inline Place Links */
+    a.place-link {
+      color: var(--accent);
+      text-decoration: underline;
+      text-decoration-color: rgba(166, 44, 55, 0.45);
+      text-underline-offset: 3px;
+      font-weight: 600;
+    }
+
+    a.place-link:hover {
+      color: #7d1e27;
+      text-decoration-color: #7d1e27;
+    }
+
+    .day-route a.place-link {
+      color: #1f1916;
+      text-decoration: underline;
+      text-decoration-color: rgba(166, 44, 55, 0.55);
+      text-underline-offset: 3px;
+    }
+
+    .stay-box a.place-link {
+      color: #7c4d00;
+      text-decoration-color: rgba(124, 77, 0, 0.5);
+    }
+
     /* Japanese Winter Washi & Cedar Hero Header */
     .hero {
       position: relative;
@@ -217,6 +243,12 @@
       font-weight: 500;
       padding: 3px 9px;
       border-radius: 999px;
+      text-decoration: none;
+    }
+
+    a.caption-tag:hover {
+      border-color: var(--accent);
+      color: var(--accent);
     }
 
     /* Timeline */
@@ -313,6 +345,54 @@
       margin-bottom: 0;
     }
 
+    /* Map Route Section */
+    .map-leg {
+      margin-bottom: 16px;
+    }
+
+    .map-leg:last-child {
+      margin-bottom: 0;
+    }
+
+    .map-leg-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .map-leg-title {
+      font-family: var(--font-serif);
+      font-size: 14.5px;
+      font-weight: 700;
+      color: var(--wood);
+    }
+
+    .map-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 8px;
+    }
+
+    .map-btn:hover {
+      background: #7d1e27;
+    }
+
+    .map-frame {
+      width: 100%;
+      height: 280px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      display: block;
+    }
+
     @media (min-width: 560px) {
       .overview-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -347,7 +427,9 @@
             </div>
             <div class="overview-item full-span">
               <div class="overview-label">路線起訖 Route</div>
-              <div class="overview-value">仙台空港（Sendai Airport）取車 → 會津／西会津 → 高湯温泉 → 山寺・銀山温泉 → 平泉／一関 → 角館・鶴の湯温泉 → 奥入瀬渓流・八食センター・青森屋 → 新青森駅（Shin-Aomori Station）還車 → 新幹線返回仙台空港</div>
+              <div class="overview-value">
+                <a class="place-link" href="https://www.sendai-airport.co.jp/" target="_blank" rel="noopener noreferrer">仙台空港（Sendai Airport）</a>取車 → 會津／西会津 → <a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Takayu+Onsen+Fukushima" target="_blank" rel="noopener noreferrer">高湯温泉</a> → <a class="place-link" href="http://www.rissyakuji.jp/" target="_blank" rel="noopener noreferrer">山寺</a>・<a class="place-link" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJ7SNY19pdiV8RIRfQXnlYhtk" target="_blank" rel="noopener noreferrer">銀山温泉</a> → 平泉／一関 → <a class="place-link" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJCXDpY72bj18RIJrG6RIlrAk" target="_blank" rel="noopener noreferrer">角館</a>・<a class="place-link" href="http://www.tsurunoyu.com/" target="_blank" rel="noopener noreferrer">鶴の湯温泉</a> → <a class="place-link" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJeXTDrw09m18RGrz8MCSK66s" target="_blank" rel="noopener noreferrer">奥入瀬渓流</a>・<a class="place-link" href="https://www.849net.com/" target="_blank" rel="noopener noreferrer">八食センター</a>・<a class="place-link" href="https://hoshinoresorts.com/ja/hotels/aomoriya/" target="_blank" rel="noopener noreferrer">青森屋</a> → <a class="place-link" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJM2KVu06fm18RlvLFgauuWZg" target="_blank" rel="noopener noreferrer">新青森駅（Shin-Aomori Station）</a>還車 → 新幹線返回仙台空港
+              </div>
             </div>
           </div>
         </div>
@@ -359,26 +441,28 @@
       <article class="card">
         <div class="day-banner">
           <div class="day-meta"><span class="day-num">DAY 01</span><span>2027年3月14日（日）</span></div>
-          <div class="day-route">仙台空港（Sendai Airport） → 會津若松（Aizuwakamatsu） → 暮らしの体験宿 ひととき（Kominka Stay Hitotoki）</div>
+          <div class="day-route">
+            <a class="place-link" href="https://www.sendai-airport.co.jp/" target="_blank" rel="noopener noreferrer">仙台空港（Sendai Airport）</a> → 會津若松（Aizuwakamatsu） → <a class="place-link" href="https://www.airbnb.jp/rooms/25983523?source_impression_id=p3_1795335230_P3SfOmf6pjW1Cpen" target="_blank" rel="noopener noreferrer">暮らしの体験宿 ひととき（Kominka Stay Hitotoki）</a>
+          </div>
         </div>
         <div class="photo-showcase">
           <img src="day1.jpg" alt="豬苗代湖冬景與西会津古民家" />
         </div>
         <div class="caption-strip">
-          <span class="caption-tag">豬苗代湖冬景（猪苗代湖）</span>
-          <span class="caption-tag">西会津古民家・書坊（ひととき）</span>
+          <a class="caption-tag" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJY53-dIKpil8RmKE6nKfZ_UM" target="_blank" rel="noopener noreferrer">豬苗代湖冬景（猪苗代湖）</a>
+          <a class="caption-tag" href="https://www.airbnb.jp/rooms/25983523?source_impression_id=p3_1795335230_P3SfOmf6pjW1Cpen" target="_blank" rel="noopener noreferrer">西会津古民家・書坊（ひととき）</a>
         </div>
         <div class="card-body">
           <ul class="timeline">
-            <li><span class="time-badge">14:05</span>抵達仙台空港（Sendai Airport）（UO890，09:00 香港 → 14:05 仙台），辦理入境與提取 4WD 休旅車（預留約 2 小時緩衝）。</li>
-            <li><span class="time-badge">16:05</span>經磐越自動車道（Ban-etsu Expressway）途經豬苗代湖（Lake Inawashiro / 猪苗代湖）前往會津若松（Aizuwakamatsu / 会津若松）（約 1 小時 55 分）。</li>
+            <li><span class="time-badge">14:05</span>抵達<a class="place-link" href="https://www.sendai-airport.co.jp/" target="_blank" rel="noopener noreferrer">仙台空港（Sendai Airport）</a>（UO890，09:00 香港 → 14:05 仙台），辦理入境與提取 4WD 休旅車（預留約 2 小時緩衝）。</li>
+            <li><span class="time-badge">16:05</span>經磐越自動車道（Ban-etsu Expressway）途經<a class="place-link" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJY53-dIKpil8RmKE6nKfZ_UM" target="_blank" rel="noopener noreferrer">豬苗代湖（Lake Inawashiro / 猪苗代湖）</a>前往會津若松（Aizuwakamatsu / 会津若松）（約 1 小時 55 分）。</li>
             <li><span class="time-badge">18:00</span>於會津若松（会津若松）超市或酒鋪採買福島清酒、刺身及晚餐食材（如未事先預約民宿家庭料理）。</li>
             <li><span class="time-badge">18:30</span>西行前往西会津（Nishiaizu / 西会津）（約 35 分），於 20:00 前完成入住。</li>
             <li><span class="time-badge">晚間</span>於古民家餐桌享用晚餐，並在書坊 lounges 小酌放鬆。</li>
           </ul>
           <div class="stay-box">
             <div class="stay-title">下榻住宿</div>
-            暮らしの体験宿 ひととき（Kominka Stay Hitotoki）（整棟包棟、2間樓上臥室、2個洗手間、免費泊車）
+            <a class="place-link" href="https://www.airbnb.jp/rooms/25983523?source_impression_id=p3_1795335230_P3SfOmf6pjW1Cpen" target="_blank" rel="noopener noreferrer">暮らしの体験宿 ひととき（Kominka Stay Hitotoki）</a>（整棟包棟、2間樓上臥室、2個洗手間、免費泊車）
           </div>
           <table class="meal-table">
             <thead>
@@ -395,25 +479,27 @@
       <article class="card">
         <div class="day-banner">
           <div class="day-meta"><span class="day-num">DAY 02</span><span>2027年3月15日（一）</span></div>
-          <div class="day-route">暮らしの体験宿 ひととき → 大内宿（Ouchi-juku） → 高湯温泉（Takayu Onsen）</div>
+          <div class="day-route">
+            <a class="place-link" href="https://www.airbnb.jp/rooms/25983523?source_impression_id=p3_1795335230_P3SfOmf6pjW1Cpen" target="_blank" rel="noopener noreferrer">暮らしの体験宿 ひととき</a> → <a class="place-link" href="http://ouchi-juku.com/" target="_blank" rel="noopener noreferrer">大内宿（Ouchi-juku）</a> → <a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Takayu+Onsen+Fukushima" target="_blank" rel="noopener noreferrer">高湯温泉（Takayu Onsen）</a>
+          </div>
         </div>
         <div class="photo-showcase">
           <img src="day2.jpg" alt="大内宿茅葺屋街景" />
         </div>
         <div class="caption-strip">
-          <span class="caption-tag">大内宿茅葺屋街景（大内宿）</span>
-          <span class="caption-tag">高湯温泉乳白色硫磺泉（高湯温泉）</span>
+          <a class="caption-tag" href="http://ouchi-juku.com/" target="_blank" rel="noopener noreferrer">大内宿茅葺屋街景（大内宿）</a>
+          <a class="caption-tag" href="https://tamagoyu.jp/" target="_blank" rel="noopener noreferrer">高湯温泉乳白色硫磺泉（高湯温泉）</a>
         </div>
         <div class="card-body">
           <ul class="timeline">
             <li><span class="time-badge">07:00–09:00</span>體驗晨間芬蘭木柴桑拿（薪サウナ，需提前與屋主預約生火），10:00 前辦理退房。</li>
-            <li><span class="time-badge">10:00</span>前往大内宿（Ouchi-juku / 大内宿）（約 1 小時 05 分），漫步江戶時代茅草屋宿場町並享用大蔥蕎麥麵（ねぎそば）午餐。</li>
-            <li><span class="time-badge">13:00</span>可順道走訪鶴ヶ城（Tsuruga Castle / 鶴ヶ城）（約 40 分），隨後沿豬苗代湖（Lake Inawashiro / 猪苗代湖）及五色沼（Goshikinuma Ponds / 五色沼）前往高湯温泉（Takayu Onsen / 高湯温泉）（約 1 小時 25 分）。</li>
+            <li><span class="time-badge">10:00</span>前往<a class="place-link" href="http://ouchi-juku.com/" target="_blank" rel="noopener noreferrer">大内宿（Ouchi-juku / 大内宿）</a>（約 1 小時 05 分），漫步江戶時代茅草屋宿場町並享用大蔥蕎麥麵（ねぎそば）午餐。</li>
+            <li><span class="time-badge">13:00</span>可順道走訪<a class="place-link" href="http://www.tsurugajo.com/turugajo/shiro-top.html" target="_blank" rel="noopener noreferrer">鶴ヶ城（Tsuruga Castle / 鶴ヶ城）</a>（約 40 分），隨後沿<a class="place-link" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJY53-dIKpil8RmKE6nKfZ_UM" target="_blank" rel="noopener noreferrer">豬苗代湖（Lake Inawashiro / 猪苗代湖）</a>及<a class="place-link" href="https://www.urabandai-inf.com/?page_id=141" target="_blank" rel="noopener noreferrer">五色沼（Goshikinuma Ponds / 五色沼）</a>前往<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Takayu+Onsen+Fukushima" target="_blank" rel="noopener noreferrer">高湯温泉（Takayu Onsen / 高湯温泉）</a>（約 1 小時 25 分）。</li>
             <li><span class="time-badge">16:00</span>辦理入住，浸泡 100% 純天然乳白色硫磺露天溫泉，並享用會席料理晚餐。</li>
           </ul>
           <div class="stay-box">
             <div class="stay-title">下榻住宿</div>
-            高湯温泉（Takayu Onsen）— 玉子湯（Tamagoyu）或 安達屋（Adachiya）
+            <a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Takayu+Onsen+Fukushima" target="_blank" rel="noopener noreferrer">高湯温泉（Takayu Onsen）</a> — <a class="place-link" href="https://tamagoyu.jp/" target="_blank" rel="noopener noreferrer">玉子湯（Tamagoyu）</a> 或 <a class="place-link" href="http://www.adachiya.jp/" target="_blank" rel="noopener noreferrer">安達屋（Adachiya）</a>
           </div>
           <table class="meal-table">
             <thead>
@@ -430,27 +516,29 @@
       <article class="card">
         <div class="day-banner">
           <div class="day-meta"><span class="day-num">DAY 03</span><span>2027年3月16日（二）</span></div>
-          <div class="day-route">高湯温泉 → 山寺・宝珠山立石寺（Yamadera） → 銀山温泉（Ginzan Onsen） → 天空のお宿 雅館（Miyabi-kan）</div>
+          <div class="day-route">
+            <a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Takayu+Onsen+Fukushima" target="_blank" rel="noopener noreferrer">高湯温泉</a> → <a class="place-link" href="http://www.rissyakuji.jp/" target="_blank" rel="noopener noreferrer">山寺・宝珠山立石寺（Yamadera）</a> → <a class="place-link" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJ7SNY19pdiV8RIRfQXnlYhtk" target="_blank" rel="noopener noreferrer">銀山温泉（Ginzan Onsen）</a> → <a class="place-link" href="https://miyabi-kan.com/" target="_blank" rel="noopener noreferrer">天空のお宿 雅館（Miyabi-kan）</a>
+          </div>
         </div>
         <div class="photo-showcase">
           <img src="day3.jpg" alt="山寺石階與銀山温泉木造街景" />
         </div>
         <div class="caption-strip">
-          <span class="caption-tag">山寺・立石寺（山寺）</span>
-          <span class="caption-tag">銀山温泉木造街景（銀山温泉）</span>
-          <span class="caption-tag">雅館圍爐裏・河谷別墅（雅館）</span>
+          <a class="caption-tag" href="http://www.rissyakuji.jp/" target="_blank" rel="noopener noreferrer">山寺・立石寺（山寺）</a>
+          <a class="caption-tag" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJ7SNY19pdiV8RIRfQXnlYhtk" target="_blank" rel="noopener noreferrer">銀山温泉木造街景（銀山温泉）</a>
+          <a class="caption-tag" href="https://miyabi-kan.com/" target="_blank" rel="noopener noreferrer">雅館圍爐裏・河谷別墅（雅館）</a>
         </div>
         <div class="card-body">
           <ul class="timeline">
-            <li><span class="time-badge">09:00</span>前往山寺・宝珠山立石寺（Yamadera / Risshaku-ji Temple）（約 1 小時），拾級登覽山寺石階。</li>
+            <li><span class="time-badge">09:00</span>前往<a class="place-link" href="http://www.rissyakuji.jp/" target="_blank" rel="noopener noreferrer">山寺・宝珠山立石寺（Yamadera / Risshaku-ji Temple）</a>（約 1 小時），拾級登覽山寺石階。</li>
             <li><span class="time-badge">11:30</span>於山寺山下享用蕎麥麵午餐。</li>
-            <li><span class="time-badge">12:30</span>前往銀山温泉（Ginzan Onsen / 銀山温泉）（約 1 小時）。將車輛停放於大正ろまん館（Taisho Roman-kan），搭乘接駁巴士（來回約 ¥500）進入木造溫泉街散步約 1.5 小時及體驗日間湯。</li>
+            <li><span class="time-badge">12:30</span>前往<a class="place-link" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJ7SNY19pdiV8RIRfQXnlYhtk" target="_blank" rel="noopener noreferrer">銀山温泉（Ginzan Onsen / 銀山温泉）</a>（約 1 小時）。將車輛停放於<a class="place-link" href="https://www.ginzan-taishoromankan.jp/" target="_blank" rel="noopener noreferrer">大正ろまん館（Taisho Roman-kan）</a>，搭乘接駁巴士（來回約 ¥500）進入木造溫泉街散步約 1.5 小時及體驗日間湯。</li>
             <li><span class="time-badge">15:15</span>向東北行駛前往一関／平泉（Ichinoseki / Hiraizumi / 一関・平泉）（約 1 小時 50 分），沿途可順便採買晚餐食材或外帶。</li>
             <li><span class="time-badge">17:15</span>入住擁有 200 年古民家樑柱的河谷景觀別墅，圍坐於圍爐裏（Irori / 囲炉裏）旁悠閒用餐。</li>
           </ul>
           <div class="stay-box">
             <div class="stay-title">下榻住宿</div>
-            天空のお宿 雅館（Tenku no Oyado Miyabi-kan）（每日一組包棟、和洋床鋪、免費泊車）
+            <a class="place-link" href="https://miyabi-kan.com/" target="_blank" rel="noopener noreferrer">天空のお宿 雅館（Tenku no Oyado Miyabi-kan）</a>（每日一組包棟、和洋床鋪、免費泊車）
           </div>
           <table class="meal-table">
             <thead>
@@ -467,27 +555,29 @@
       <article class="card">
         <div class="day-banner">
           <div class="day-meta"><span class="day-num">DAY 04</span><span>2027年3月17日（三）</span></div>
-          <div class="day-route">天空のお宿 雅館 → 角館武家屋敷通り（Kakunodate） → 鶴の湯温泉（Tsurunoyu Onsen）</div>
+          <div class="day-route">
+            <a class="place-link" href="https://miyabi-kan.com/" target="_blank" rel="noopener noreferrer">天空のお宿 雅館</a> → <a class="place-link" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJCXDpY72bj18RIJrG6RIlrAk" target="_blank" rel="noopener noreferrer">角館武家屋敷通り（Kakunodate）</a> → <a class="place-link" href="http://www.tsurunoyu.com/" target="_blank" rel="noopener noreferrer">鶴の湯温泉（Tsurunoyu Onsen）</a>
+          </div>
         </div>
         <div class="photo-showcase">
           <img src="day4.jpg" alt="角館武家屋敷、田沢湖與鶴の湯温泉" />
         </div>
         <div class="caption-strip">
-          <span class="caption-tag">角館武家屋敷（角館）</span>
-          <span class="caption-tag">田沢湖（田沢湖）</span>
-          <span class="caption-tag">鶴の湯温泉露天風呂（鶴の湯）</span>
+          <a class="caption-tag" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJCXDpY72bj18RIJrG6RIlrAk" target="_blank" rel="noopener noreferrer">角館武家屋敷（角館）</a>
+          <a class="caption-tag" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJjzSdMoKJj18RISzxuUubhMI" target="_blank" rel="noopener noreferrer">田沢湖（田沢湖）</a>
+          <a class="caption-tag" href="http://www.tsurunoyu.com/" target="_blank" rel="noopener noreferrer">鶴の湯温泉露天風呂（鶴の湯）</a>
         </div>
         <div class="card-body">
           <ul class="timeline">
-            <li><span class="time-badge">08:30</span>可選擇晨間順遊平泉（Hiraizumi / 平泉）中尊寺（Chuson-ji Temple / 中尊寺）（距離雅館約 20–25 分鐘車程），再北上前往秋田。</li>
-            <li><span class="time-badge">09:45</span>前往角館武家屋敷通り（Kakunodate Samurai District / 角館武家屋敷通り）（約 1 小時 30 分）散步及午餐。</li>
-            <li><span class="time-badge">13:00</span>途經田沢湖（Lake Tazawa / 田沢湖）前往乳頭温泉郷（Nyuto Onsenkyo / 乳頭温泉郷）（約 50 分）。</li>
-            <li><span class="time-badge">14:00</span>直接辦理入住鶴の湯温泉（Tsurunoyu Onsen / 鶴の湯温泉），從容享受館內乳白色露天溫泉（不另購湯めぐり帖，避免因約 15:00 日歸結束時間而趕路）。</li>
+            <li><span class="time-badge">08:30</span>可選擇晨間順遊平泉（Hiraizumi / 平泉）<a class="place-link" href="http://www.chusonji.or.jp/" target="_blank" rel="noopener noreferrer">中尊寺（Chuson-ji Temple / 中尊寺）</a>（距離雅館約 20–25 分鐘車程），再北上前往秋田。</li>
+            <li><span class="time-badge">09:45</span>前往<a class="place-link" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJCXDpY72bj18RIJrG6RIlrAk" target="_blank" rel="noopener noreferrer">角館武家屋敷通り（Kakunodate Samurai District / 角館武家屋敷通り）</a>（約 1 小時 30 分）散步及午餐。</li>
+            <li><span class="time-badge">13:00</span>途經<a class="place-link" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJjzSdMoKJj18RISzxuUubhMI" target="_blank" rel="noopener noreferrer">田沢湖（Lake Tazawa / 田沢湖）</a>前往<a class="place-link" href="https://www.google.com/maps/search/?api=1&query=Nyuto+Onsenkyo+Semboku+Akita" target="_blank" rel="noopener noreferrer">乳頭温泉郷（Nyuto Onsenkyo / 乳頭温泉郷）</a>（約 50 分）。</li>
+            <li><span class="time-badge">14:00</span>直接辦理入住<a class="place-link" href="http://www.tsurunoyu.com/" target="_blank" rel="noopener noreferrer">鶴の湯温泉（Tsurunoyu Onsen / 鶴の湯温泉）</a>，從容享受館內乳白色露天溫泉（不另購湯めぐり帖，避免因約 15:00 日歸結束時間而趕路）。</li>
             <li><span class="time-badge">18:00</span>品嚐山芋鍋（Yamanoimo Nabe）及炭火烤岩魚等傳統晚餐，隨後晚間泡湯。</li>
           </ul>
           <div class="stay-box">
             <div class="stay-title">下榻住宿</div>
-            鶴の湯温泉（Tsurunoyu Onsen）（備選：鶴の湯別館 山の宿 Tsurunoyu Bekkan Yama-no-Yado 或 孫六温泉 六庵 Magoroku Onsen Rokuan）
+            <a class="place-link" href="http://www.tsurunoyu.com/" target="_blank" rel="noopener noreferrer">鶴の湯温泉（Tsurunoyu Onsen）</a>（備選：<a class="place-link" href="http://www.tsurunoyu.com/" target="_blank" rel="noopener noreferrer">鶴の湯別館 山の宿 Tsurunoyu Bekkan Yama-no-Yado</a> 或 <a class="place-link" href="https://magorokuonsen.com/" target="_blank" rel="noopener noreferrer">孫六温泉 六庵 Magoroku Onsen Rokuan</a>）
           </div>
           <table class="meal-table">
             <thead>
@@ -504,27 +594,29 @@
       <article class="card">
         <div class="day-banner">
           <div class="day-meta"><span class="day-num">DAY 05</span><span>2027年3月18日（四）</span></div>
-          <div class="day-route">鶴の湯温泉 → 奥入瀬渓流（Oirase Gorge） → 八食センター（Hasshoku Center） → 三沢（Misawa）</div>
+          <div class="day-route">
+            <a class="place-link" href="http://www.tsurunoyu.com/" target="_blank" rel="noopener noreferrer">鶴の湯温泉</a> → <a class="place-link" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJeXTDrw09m18RGrz8MCSK66s" target="_blank" rel="noopener noreferrer">奥入瀬渓流（Oirase Gorge）</a> → <a class="place-link" href="https://www.849net.com/" target="_blank" rel="noopener noreferrer">八食センター（Hasshoku Center）</a> → 三沢（Misawa）
+          </div>
         </div>
         <div class="photo-showcase">
           <img src="day5.jpg" alt="奥入瀬渓流、八食センター炭烤海鮮與青森屋浮湯" />
         </div>
         <div class="caption-strip">
-          <span class="caption-tag">奥入瀬渓流冬瀑（奥入瀬）</span>
-          <span class="caption-tag">七厘村炭烤海鮮（八食センター）</span>
-          <span class="caption-tag">青森屋浮湯・祭典（青森屋）</span>
+          <a class="caption-tag" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJeXTDrw09m18RGrz8MCSK66s" target="_blank" rel="noopener noreferrer">奥入瀬渓流冬瀑（奥入瀬）</a>
+          <a class="caption-tag" href="https://www.849net.com/" target="_blank" rel="noopener noreferrer">七厘村炭烤海鮮（八食センター）</a>
+          <a class="caption-tag" href="https://hoshinoresorts.com/ja/hotels/aomoriya/" target="_blank" rel="noopener noreferrer">青森屋浮湯・祭典（青森屋）</a>
         </div>
         <div class="card-body">
           <ul class="timeline">
-            <li><span class="time-badge">09:00</span>途經十和田湖（Lake Towada / 十和田湖）並駛經奥入瀬渓流（Oirase Gorge / 奥入瀬渓流）（約 1 小時 50 分），欣賞冬日溪流與冰瀑景致。</li>
-            <li><span class="time-badge">12:00</span>往東前往八戸（Hachinohe / 八戸）八食センター（Hasshoku Center / 八食センター）（約 1 小時 10 分）。</li>
-            <li><span class="time-badge">13:15</span>於八食センター（Hasshoku Center）內的七厘村（Shichirin-mura / 七厘村）享用炭烤海鮮午餐——在市場攤檔挑選新鮮扇貝、生蠔、魷魚及螃蟹，即席以炭爐燒烤。</li>
+            <li><span class="time-badge">09:00</span>途經<a class="place-link" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJ4cjU-rUim18RLOTTZFDdfo8" target="_blank" rel="noopener noreferrer">十和田湖（Lake Towada / 十和田湖）</a>並駛經<a class="place-link" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJeXTDrw09m18RGrz8MCSK66s" target="_blank" rel="noopener noreferrer">奥入瀬渓流（Oirase Gorge / 奥入瀬渓流）</a>（約 1 小時 50 分），欣賞冬日溪流與冰瀑景致。</li>
+            <li><span class="time-badge">12:00</span>往東前往八戸（Hachinohe / 八戸）<a class="place-link" href="https://www.849net.com/" target="_blank" rel="noopener noreferrer">八食センター（Hasshoku Center / 八食センター）</a>（約 1 小時 10 分）。</li>
+            <li><span class="time-badge">13:15</span>於<a class="place-link" href="https://www.849net.com/" target="_blank" rel="noopener noreferrer">八食センター（Hasshoku Center）</a>內的七厘村（Shichirin-mura / 七厘村）享用炭烤海鮮午餐——在市場攤檔挑選新鮮扇貝、生蠔、魷魚及螃蟹，即席以炭爐燒烤。</li>
             <li><span class="time-badge">15:00</span>向北短程驅車前往三沢（Misawa / 三沢）（約 30 分）。</li>
-            <li><span class="time-badge">15:30</span>入住星野リゾート 青森屋（Hoshino Resorts Aomoriya），體驗睡魔燈籠露天風呂「浮湯」及晚間祭典舞台表演「みちのく祭りや」。</li>
+            <li><span class="time-badge">15:30</span>入住<a class="place-link" href="https://hoshinoresorts.com/ja/hotels/aomoriya/" target="_blank" rel="noopener noreferrer">星野リゾート 青森屋（Hoshino Resorts Aomoriya）</a>，體驗睡魔燈籠露天風呂「浮湯」及晚間祭典舞台表演「みちのく祭りや」。</li>
           </ul>
           <div class="stay-box">
             <div class="stay-title">下榻住宿</div>
-            星野リゾート 青森屋（Hoshino Resorts Aomoriya）
+            <a class="place-link" href="https://hoshinoresorts.com/ja/hotels/aomoriya/" target="_blank" rel="noopener noreferrer">星野リゾート 青森屋（Hoshino Resorts Aomoriya）</a>
           </div>
           <table class="meal-table">
             <thead>
@@ -541,26 +633,28 @@
       <article class="card">
         <div class="day-banner">
           <div class="day-meta"><span class="day-num">DAY 06</span><span>2027年3月19日（五）</span></div>
-          <div class="day-route">三沢（Misawa） → 新青森駅（Shin-Aomori Station） → 仙台空港（Sendai Airport） → 香港（Hong Kong）</div>
+          <div class="day-route">
+            三沢（Misawa） → <a class="place-link" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJM2KVu06fm18RlvLFgauuWZg" target="_blank" rel="noopener noreferrer">新青森駅（Shin-Aomori Station）</a> → <a class="place-link" href="https://www.sendai-airport.co.jp/" target="_blank" rel="noopener noreferrer">仙台空港（Sendai Airport）</a> → 香港（Hong Kong）
+          </div>
         </div>
         <div class="photo-showcase">
           <img src="day6.jpg" alt="東北新幹線はやぶさ" />
         </div>
         <div class="caption-strip">
-          <span class="caption-tag">東北新幹線はやぶさ</span>
-          <span class="caption-tag">仙台空港アクセス線</span>
+          <a class="caption-tag" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJM2KVu06fm18RlvLFgauuWZg" target="_blank" rel="noopener noreferrer">東北新幹線はやぶさ（新青森駅）</a>
+          <a class="caption-tag" href="https://www.senat.co.jp/" target="_blank" rel="noopener noreferrer">仙台空港アクセス線（仙台空港）</a>
         </div>
         <div class="card-body">
           <ul class="timeline">
-            <li><span class="time-badge">08:30</span>由三沢（Misawa / 三沢）驅車前往新青森駅（Shin-Aomori Station / 新青森駅）（約 1 小時 15 分）。</li>
-            <li><span class="time-badge">10:00</span>於新青森駅（Shin-Aomori Station）辦理還車手續。</li>
-            <li><span class="time-badge">10:35</span>搭乘東北新幹線はやぶさ（Hayabusa Shinkansen）直達仙台駅（Sendai Station / 仙台駅）（10:35 → 12:10，約 1 小時 35 分）。</li>
-            <li><span class="time-badge">12:25</span>轉乘仙台空港アクセス線（Sendai Airport Access Line）前往仙台空港（Sendai Airport）（12:25 → 12:50，約 25 分）。</li>
-            <li><span class="time-badge">12:50</span>抵達仙台空港（Sendai Airport），預留完整 2 小時辦理登機及離境返回香港。</li>
+            <li><span class="time-badge">08:30</span>由三沢（Misawa / 三沢）驅車前往<a class="place-link" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJM2KVu06fm18RlvLFgauuWZg" target="_blank" rel="noopener noreferrer">新青森駅（Shin-Aomori Station / 新青森駅）</a>（約 1 小時 15 分）。</li>
+            <li><span class="time-badge">10:00</span>於<a class="place-link" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJM2KVu06fm18RlvLFgauuWZg" target="_blank" rel="noopener noreferrer">新青森駅（Shin-Aomori Station）</a>辦理還車手續。</li>
+            <li><span class="time-badge">10:35</span>搭乘東北新幹線はやぶさ（Hayabusa Shinkansen）直達<a class="place-link" href="https://www.jreast.co.jp/estation/station/info.aspx?StationCd=913" target="_blank" rel="noopener noreferrer">仙台駅（Sendai Station / 仙台駅）</a>（10:35 → 12:10，約 1 小時 35 分）。</li>
+            <li><span class="time-badge">12:25</span>轉乘<a class="place-link" href="https://www.senat.co.jp/" target="_blank" rel="noopener noreferrer">仙台空港アクセス線（Sendai Airport Access Line）</a>前往<a class="place-link" href="https://www.sendai-airport.co.jp/" target="_blank" rel="noopener noreferrer">仙台空港（Sendai Airport）</a>（12:25 → 12:50，約 25 分）。</li>
+            <li><span class="time-badge">12:50</span>抵達<a class="place-link" href="https://www.sendai-airport.co.jp/" target="_blank" rel="noopener noreferrer">仙台空港（Sendai Airport）</a>，預留完整 2 小時辦理登機及離境返回香港。</li>
           </ul>
           <div class="stay-box">
             <div class="stay-title">回程交通銜接</div>
-            10:00 新青森駅還車 → 10:35 新幹線はやぶさ（12:10 抵仙台駅）→ 12:25 仙台空港アクセス線（12:50 抵仙台空港）
+            10:00 <a class="place-link" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJM2KVu06fm18RlvLFgauuWZg" target="_blank" rel="noopener noreferrer">新青森駅</a>還車 → 10:35 新幹線はやぶさ（12:10 抵<a class="place-link" href="https://www.jreast.co.jp/estation/station/info.aspx?StationCd=913" target="_blank" rel="noopener noreferrer">仙台駅</a>）→ 12:25 <a class="place-link" href="https://www.senat.co.jp/" target="_blank" rel="noopener noreferrer">仙台空港アクセス線</a>（12:50 抵<a class="place-link" href="https://www.sendai-airport.co.jp/" target="_blank" rel="noopener noreferrer">仙台空港</a>）
           </div>
           <table class="meal-table">
             <thead>
@@ -578,11 +672,42 @@
         <div class="card-body">
           <ul class="notes-list">
             <li><strong>車程上限：</strong>全程每一段行車時間均控制在 ≤ 2 小時。</li>
-            <li><strong>ひととき桑拿與入住：</strong>Day 1 出發前向屋主確認約 19:00 抵達（20:00 入住截止前），並提前預約 Day 2 清晨（07:00–09:00）木柴桑拿生火。</li>
-            <li><strong>銀山温泉（Ginzan Onsen）交通：</strong>旺季預約接駁時段限制暫定至 2027年3月7日止（建議於 2027年2月再次核對是否因積雪延長）；請於大正ろまん館（Taisho Roman-kan）停車並乘接駁車進出，切勿徒步走未除雪路段。</li>
-            <li><strong>八食センター（Hasshoku Center）營業時間：</strong>逢星期三休息；安排於 3月18日（四）午餐時段前往完全正常營業（七厘村 Shichirin-mura 營業至 17:00）。</li>
+            <li><strong><a class="place-link" href="https://www.airbnb.jp/rooms/25983523?source_impression_id=p3_1795335230_P3SfOmf6pjW1Cpen" target="_blank" rel="noopener noreferrer">ひととき</a>桑拿與入住：</strong>Day 1 出發前向屋主確認約 19:00 抵達（20:00 入住截止前），並提前預約 Day 2 清晨（07:00–09:00）木柴桑拿生火。</li>
+            <li><strong><a class="place-link" href="https://www.google.com/maps/place//data=!4m2!3m1!19sChIJ7SNY19pdiV8RIRfQXnlYhtk" target="_blank" rel="noopener noreferrer">銀山温泉（Ginzan Onsen）</a>交通：</strong>旺季預約接駁時段限制暫定至 2027年3月7日止（建議於 2027年2月再次核對是否因積雪延長）；請於<a class="place-link" href="https://www.ginzan-taishoromankan.jp/" target="_blank" rel="noopener noreferrer">大正ろまん館（Taisho Roman-kan）</a>停車並乘接駁車進出，切勿徒步走未除雪路段。</li>
+            <li><strong><a class="place-link" href="https://www.849net.com/" target="_blank" rel="noopener noreferrer">八食センター（Hasshoku Center）</a>營業時間：</strong>逢星期三休息；安排於 3月18日（四）午餐時段前往完全正常營業（七厘村 Shichirin-mura 營業至 17:00）。</li>
             <li><strong>雪季裝備：</strong>租車時務必確認 4WD 及雪胎（スタッドレスタイヤ），3月中旬西会津、高湯、乳頭及奥入瀬周邊山路仍可能有積雪。</li>
           </ul>
+        </div>
+      </div>
+
+      <div class="section-title">全程自駕路線地圖 Route Map</div>
+      <div class="card">
+        <div class="card-body">
+          <div class="map-leg">
+            <div class="map-leg-header">
+              <div class="map-leg-title">前半段（Day 1–3）：仙台空港 → 西会津 → 大内宿 → 高湯 → 山寺 → 銀山 → 平泉</div>
+              <a class="map-btn" href="https://www.google.com/maps/dir/Sendai+Airport,+%E5%8D%97%E5%8E%9F-%E7%84%A1%E7%95%AA%E5%9C%B0+%E4%B8%8B%E5%A2%97%E7%94%B0,+%E5%90%8D%E5%8F%96%E5%B8%82+%E5%AE%AE%E5%9F%8E%E7%9C%8C,+Japan/Guest+House+Hitotoki,+%E4%B8%8B%E6%B2%96%E3%83%8E%E5%8E%9F-2650-1+%E4%B8%8A%E9%87%8E%E5%B0%BB%E5%AD%97,+%E8%A5%BF%E4%BC%9A%E6%B4%A5%E7%94%BA+%E7%A6%8F%E5%B3%B6%E7%9C%8C,+Japan/Ouchijuku,+Ouchi,+Shimogo,+Fukushima,+Japan/Takayu+Onsen+Tamagoyu,+%E9%AB%98%E6%B9%AF-7+%E7%94%BA%E5%BA%AD%E5%9D%82,+%E7%A6%8F%E5%B3%B6%E5%B8%82+%E7%A6%8F%E5%B3%B6%E7%9C%8C,+Japan/Risshaku-ji+Temple+(Yamadera),+4456-1+%E5%B1%B1%E5%AF%BA,+%E5%B1%B1%E5%BD%A2%E5%B8%82+%E5%B1%B1%E5%BD%A2%E7%9C%8C,+Japan/Ginzan+Onsen/Hiraizumi,+Iwate,+Japan/data=!4m44!4m43!1m5!1m1!19sChIJ_QgAP08iil8R4Bh_eNoikh4!2m2!1d140.9171139!2d38.1399076!1m5!1m1!19sChIJkZYDvLI19V8RbNPrhTLSd8Q!2m2!1d139.6293871!2d37.6271152!1m5!1m1!19sChIJsRZu4rH8H2ARMPL0O-FTKWI!2m2!1d139.8604976!2d37.330862599999996!1m5!1m1!19sChIJ0aDKJE-Qil8Rcm9BqtsO8bw!2m2!1d140.3097977!2d37.7523504!1m5!1m1!19sChIJeUV2g-_Oi18RwK-4JcNEe44!2m2!1d140.4346099!2d38.3131193!1m5!1m1!19sChIJ7SNY19pdiV8RIRfQXnlYhtk!2m2!1d140.5305457!2d38.5706177!1m5!1m1!19sChIJLcDp9gPOiF8Rq5E8M3Cjpw4!2m2!1d141.11378679999999!2d38.986608499999996!3e0?entry=gemini&utm_source=gemini&utm_campaign=gem-default" target="_blank" rel="noopener noreferrer">開啟 Google Maps 路線</a>
+            </div>
+            <iframe
+              class="map-frame"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?saddr=Sendai+Airport,+Natori,+Miyagi,+Japan&daddr=Nishiaizu,+Fukushima,+Japan+to:Ouchijuku,+Shimogo,+Fukushima,+Japan+to:Takayu+Onsen,+Fukushima,+Japan+to:Yamadera,+Yamagata,+Japan+to:Ginzan+Onsen,+Obanazawa,+Yamagata,+Japan+to:Hiraizumi,+Iwate,+Japan&output=embed">
+            </iframe>
+          </div>
+
+          <div class="map-leg">
+            <div class="map-leg-header">
+              <div class="map-leg-title">後半段（Day 4–6）：平泉 → 角館 → 鶴の湯 → 奥入瀬 → 八食 → 青森屋 → 新青森駅</div>
+              <a class="map-btn" href="https://www.google.com/maps/dir/Hiraizumi,+Iwate,+Japan/%E6%97%A5%E6%9C%AC,+%E7%A7%8B%E7%94%B0%E7%9C%8C%E4%BB%99%E5%8C%97%E5%B8%82,+%E8%A7%92%E9%A4%A8%E7%94%BA%E6%9D%B1%E5%8B%9D%E6%A8%82%E4%B8%81+%E8%A7%92%E9%A4%A8%E7%94%BA%E8%A1%A8%E7%94%BA%E4%B8%8A%E4%B8%81,+Kakunodate+Samurai+Residence+Street/%E6%97%A5%E6%9C%AC,+%E7%A7%8B%E7%94%B0%E7%9C%8C%E4%BB%99%E5%8C%97%E5%B8%82%E7%94%B0%E6%B2%A2%E6%B9%96%E7%94%B0%E6%B2%A2%E5%85%88%E9%81%94,+%E6%B2%A2%E5%9B%BD%E6%9C%89%E6%9E%97%EF%BC%95%EF%BC%90,+Tsurunoyu+Onsen/Oirase+keiry%C5%AB+Gorge,+%E5%A5%A5%E5%85%A5%E7%80%AC%E5%B7%9D,+%E5%A5%A5%E5%85%A5%E7%80%AC+%E5%A5%A5%E7%80%AC,+%E5%8D%81%E5%92%8C%E7%94%B0%E5%B8%82+%E9%9D%92%E6%A3%AE%E7%9C%8C,+Japan/Hasshoku+Center,+%E7%A5%9E%E6%89%8D-22-2+%E6%B2%B3%E5%8E%9F%E6%9C%A8,+%E5%85%AB%E6%88%B8%E5%B8%82+%E9%9D%92%E6%A3%AE%E7%9C%8C,+Japan/Aomoriya+by+Hoshino+Resorts,+56+%E5%8F%A4%E9%96%93%E6%9C%A8%E5%B1%B1,+%E4%B8%89%E6%B2%A2%E5%B8%82+%E9%9D%92%E6%A3%AE%E7%9C%8C,+Japan/Shin-Aomori+Station,+%E9%AB%98%E9%96%93-140-2+%E7%9F%B3%E6%B1%9F,+%E9%9D%92%E6%A3%AE%E5%B8%82+%E9%9D%92%E6%A3%AE%E7%9C%8C,+Japan/data=!4m44!4m43!1m5!1m1!19sChIJLcDp9gPOiF8Rq5E8M3Cjpw4!2m2!1d141.11378679999999!2d38.986608499999996!1m5!1m1!19sChIJCXDpY72bj18RIJrG6RIlrAk!2m2!1d140.5617163!2d39.5992618!1m5!1m1!19sChIJMy_IqMJmhV8RwCaBe4s4WKo!2m2!1d140.7798893!2d39.805188799999996!1m5!1m1!19sChIJeXTDrw09m18RGrz8MCSK66s!2m2!1d140.9525486!2d40.489961799999996!1m5!1m1!19sChIJSyFA3R9Om18RlcVbdyDztE4!2m2!1d141.4529163!2d40.526441399999996!1m5!1m1!19sChIJ6_Yie81dm18RTybdewmBTCY!2m2!1d141.3554479!2d40.6616861!1m5!1m1!19sChIJM2KVu06fm18RlvLFgauuWZg!2m2!1d140.6934715!2d40.8281932!3e0?entry=gemini&utm_source=gemini&utm_campaign=gem-default" target="_blank" rel="noopener noreferrer">開啟 Google Maps 路線</a>
+            </div>
+            <iframe
+              class="map-frame"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?saddr=Hiraizumi,+Iwate,+Japan&daddr=Kakunodate,+Semboku,+Akita,+Japan+to:Tsurunoyu+Onsen,+Semboku,+Akita,+Japan+to:Oirase+Gorge,+Towada,+Aomori,+Japan+to:Hasshoku+Center,+Hachinohe,+Aomori,+Japan+to:Hoshino+Resorts+Aomoriya,+Misawa,+Aomori,+Japan+to:Shin-Aomori+Station,+Aomori,+Japan&output=embed">
+            </iframe>
+          </div>
         </div>
       </div>
     </div>
